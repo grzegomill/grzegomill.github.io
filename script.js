@@ -11,9 +11,11 @@ $(document).ready(function() {
   var availableBoards = {};
   var availableTasks = {};
 
+  
   // init
 
   getAllTasks();
+  
 
   function getAllAvailableBoards(callback, callbackArgs) {
     var requestUrl = trelloApiRoot + 'getTrelloBoards';
