@@ -1,6 +1,8 @@
 $(document).ready(function() {
   
-  const apiRoot = 'https://frozen-refuge-51539.herokuapp.com/v1/task/';
+  
+  const apiRoot = 'https://frozen-refuge-51539.herokuapp.com/v1/tasks';
+ 
   const trelloApiRoot = 'https://frozen-refuge-51539.herokuapp.com/v1/trello/';
   
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
@@ -65,7 +67,7 @@ $(document).ready(function() {
   }
 
   function getAllTasks() {
-    const requestUrl = apiRoot + 'getTasks';
+    const requestUrl = apiRoot;
 
     $.ajax({
       url: requestUrl,
@@ -86,7 +88,7 @@ $(document).ready(function() {
     var taskId = parentEl.attr('data-task-id');
     var taskTitle = parentEl.find('[data-task-name-input]').val();
     var taskContent = parentEl.find('[data-task-content-input]').val();
-    var requestUrl = apiRoot + 'updateTask';
+    var requestUrl = apiRoot;
 
     $.ajax({
       url: requestUrl,
@@ -110,10 +112,10 @@ $(document).ready(function() {
   function handleTaskDeleteRequest() {
     var parentEl = $(this).parents('[data-task-id]');
     var taskId = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + 'deleteTask';
+    var requestUrl = apiRoot;
 
     $.ajax({
-      url: requestUrl + '/?' + $.param({
+      url: requestUrl + '/' + $.param({
         taskId: taskId
       }),
       method: 'DELETE',
@@ -129,7 +131,7 @@ $(document).ready(function() {
     var taskTitle = $(this).find('[name="title"]').val();
     var taskContent = $(this).find('[name="content"]').val();
 
-    var requestUrl = apiRoot + 'createTask';
+    var requestUrl = apiRoot;
 
     $.ajax({
       url: requestUrl,
