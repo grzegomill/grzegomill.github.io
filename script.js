@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
-  const apiRoot = 'http://frozen-refuge-51539.herokuapp.com/v1/task/';
-  const trelloApiRoot = 'http://frozen-refuge-51539.herokuapp.com/v1/trello/';
+  const apiRoot = 'https://frozen-refuge-51539.herokuapp.com/v1/task/';
+  const trelloApiRoot = 'https://frozen-refuge-51539.herokuapp.com/v1/trello/';
   
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
